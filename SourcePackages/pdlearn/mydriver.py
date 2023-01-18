@@ -550,9 +550,8 @@ class Mydriver:
         builder = ActionChains(self.driver)
         builder.reset_actions()
         track = self.move_mouse(300)
-        builder.move_to_element(
-            self.driver.find_element_by_class_name("btn_slide"))
-        builder.click_and_hold()
+        slider = self.driver.find_element_by_css_selector("#nc_1_n1z") 
+        builder.click_and_hold(slider)
         time.sleep(0.2)
         for i in track:
             builder.move_by_offset(xoffset=i, yoffset=0)
